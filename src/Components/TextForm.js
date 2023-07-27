@@ -17,7 +17,10 @@ export default function TextForm(props) {
     const handleOnChange= (event)=>{
         setText(event.target.value);
     }
-    const [text, setText] = useState("Enter Text Here");
+    const handleClearText= ()=>{
+        setText('');;
+    }
+    const [text, setText] = useState('');
     
   return (
     <>
@@ -29,6 +32,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to UpperCase</button>
         <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to LowerCase</button>
         <button className="btn btn-primary mx-1" onClick={handleRmSpaces}>Remove Spaces</button>
+        <button className="btn btn-primary mx-1" onClick={handleClearText}>Clear Text</button>
     </div>
     <div className="container my-3">
         <h2>
