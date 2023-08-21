@@ -37,14 +37,17 @@ function App() {
     }
   }
   return (
-    <>
+    <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       
       <div className='container my-3'>
-          <TextForm heading="Enter Your Text Below" mode={mode} showAlert={showAlert}/>
+        <Routes>
+            <Route path="/" element={<TextForm heading="Enter Your Text Below" mode={mode} showAlert={showAlert}/>}/>
+            <Route path="/about" element={<About mode={mode}/>}/>
+        </Routes>
       </div>
-      </>
+    </Router>
     
   );
 }
